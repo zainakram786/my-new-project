@@ -80,44 +80,46 @@ const AboutUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 1.0 }}
-                className="p-4 w-[95%] md:w-[80%] mx-auto overflow-x-auto"
+                className="p-4 w-[95%] md:w-[80%] mx-auto"
               >
-  <table className="w-full border-separate border-spacing-0 text-white text-center text-sm md:text-base border border-white min-w-[600px]">
-    <thead className="bg-white text-black">
-      <tr>
-        <th className="py-8 px-6 border border-white">Features</th>
-        <th className="py-8 px-6 border border-white">Trade Today</th>
-        <th className="py-8 px-6 border border-white">Competitors</th>
-      </tr>
-    </thead>
-    <tbody className="bg-[#011229]">
-      <tr>
-        <td className="py-8 px-6 border border-white">AI & Deep Learning</td>
-        <td className="py-8 px-6 border border-white text-green-500 text-2xl">✔</td>
-        <td className="py-8 px-6 border border-white text-red-500 text-2xl">✘</td>
-      </tr>
-      <tr>
-        <td className="py-8 px-6 border border-white">Real-Time Sentiment Analysis</td>
-        <td className="py-8 px-6 border border-white text-green-500 text-2xl">✔</td>
-        <td className="py-8 px-6 border border-white text-red-500 text-2xl">✘</td>
-      </tr>
-      <tr>
-        <td className="py-8 px-6 border border-white">60+ Technical Indicators</td>
-        <td className="py-8 px-6 border border-white text-green-500 text-2xl">✔</td>
-        <td className="py-8 px-6 border border-white text-red-500 text-2xl">✘</td>
-      </tr>
-      <tr>
-        <td className="py-8 px-6 border border-white">Support/Resistance Predictions</td>
-        <td className="py-8 px-6 border border-white text-green-500 text-2xl">✔</td>
-        <td className="py-8 px-6 border border-white text-red-500 text-2xl">✘</td>
-      </tr>
-      <tr>
-        <td className="py-8 px-6 border border-white">Market Trend Detection</td>
-        <td className="py-8 px-6 border border-white text-green-500 text-2xl">✔</td>
-        <d className="py-8 px-6 border border-white text-red-500 text-2xl">✘</d>
-      </tr>
-    </tbody>
-  </table>
+  <div className="overflow-x-auto">
+    <table className="w-full border-separate border-spacing-0 text-white text-center text-xs sm:text-sm md:text-base border border-white">
+      <thead className="bg-white text-black">
+        <tr>
+          <th className="py-4 px-2 md:py-8 md:px-6 border border-white">Features</th>
+          <th className="py-4 px-2 md:py-8 md:px-6 border border-white">Trade Today</th>
+          <th className="py-4 px-2 md:py-8 md:px-6 border border-white">Competitors</th>
+        </tr>
+      </thead>
+      <tbody className="bg-[#011229]">
+        <tr>
+          <td className="py-4 px-2 md:py-8 md:px-6 border border-white">AI & Deep Learning</td>
+          <td className="py-4 px-2 md:py-8 md:px-6 border border-white text-green-500 text-xl md:text-2xl">✔</td>
+          <td className="py-4 px-2 md:py-8 md:px-6 border border-white text-red-500 text-xl md:text-2xl">✘</td>
+        </tr>
+        <tr>
+          <td className="py-4 px-2 md:py-8 md:px-6 border border-white">Real-Time Sentiment Analysis</td>
+          <td className="py-4 px-2 md:py-8 md:px-6 border border-white text-green-500 text-xl md:text-2xl">✔</td>
+          <td className="py-4 px-2 md:py-8 md:px-6 border border-white text-red-500 text-xl md:text-2xl">✘</td>
+        </tr>
+        <tr>
+          <td className="py-4 px-2 md:py-8 md:px-6 border border-white">60+ Technical Indicators</td>
+          <td className="py-4 px-2 md:py-8 md:px-6 border border-white text-green-500 text-xl md:text-2xl">✔</td>
+          <td className="py-4 px-2 md:py-8 md:px-6 border border-white text-red-500 text-xl md:text-2xl">✘</td>
+        </tr>
+        <tr>
+          <td className="py-4 px-2 md:py-8 md:px-6 border border-white">Support/Resistance Predictions</td>
+          <td className="py-4 px-2 md:py-8 md:px-6 border border-white text-green-500 text-xl md:text-2xl">✔</td>
+          <td className="py-4 px-2 md:py-8 md:px-6 border border-white text-red-500 text-xl md:text-2xl">✘</td>
+        </tr>
+        <tr>
+          <td className="py-4 px-2 md:py-8 md:px-6 border border-white">Market Trend Detection</td>
+          <td className="py-4 px-2 md:py-8 md:px-6 border border-white text-green-500 text-xl md:text-2xl">✔</td>
+          <td className="py-4 px-2 md:py-8 md:px-6 border border-white text-red-500 text-xl md:text-2xl">✘</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </motion.div>
 
         </div>
