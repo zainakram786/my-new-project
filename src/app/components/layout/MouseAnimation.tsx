@@ -39,7 +39,7 @@ const MouseAnimation: React.FC = () => {
       const radius = 15;
       const pulse = 0.5 + Math.sin(time) * 0.4; // Pulse from 0.1 to 0.9
 
-      // Create a radial gradient
+      // Create a radial gradient for the fill
       const gradient = ctx.createRadialGradient(
         mouse.current.x,
         mouse.current.y,
@@ -49,17 +49,31 @@ const MouseAnimation: React.FC = () => {
         radius
       );
 
-      // Add color stops
+      // Add color stops for the fill
       gradient.addColorStop(0, `rgba(0, 173, 238, ${pulse})`); // Center color pulses
       gradient.addColorStop(0.8, 'rgba(0, 173, 238, 0.1)');   // Mid color
       gradient.addColorStop(1, 'rgba(0, 173, 238, 0)');      // Outer edge is transparent
 
       ctx.fillStyle = gradient;
 
+      // Draw the filled circle
       ctx.beginPath();
       ctx.arc(mouse.current.x, mouse.current.y, radius, 0, Math.PI * 2, false);
       ctx.fill();
       ctx.closePath();
+
+      // Draw the glowing, blinking border
+      ctx.beginPath();
+      ctx.arc(mouse.current.x, mouse.current.y, radius, 0, Math.PI * 2, false);
+      ctx.strokeStyle = `rgba(0, 173, 238, ${pulse * 0.8})`; // Blinking stroke
+      ctx.lineWidth = 2;
+      ctx.shadowBlur = 10 + 5 * Math.sin(time); // Blinking glow
+      ctx.shadowColor = 'rgba(0, 173, 238, 1)';
+      ctx.stroke();
+      ctx.closePath();
+
+      // Reset shadow properties
+      ctx.shadowBlur = 0;
 
       animationFrameId.current = requestAnimationFrame(animate);
     };
