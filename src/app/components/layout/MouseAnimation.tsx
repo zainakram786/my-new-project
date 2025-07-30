@@ -3,22 +3,10 @@
 
 import { useEffect, useRef } from "react";
 
-interface Circle {
-  x: number;
-  y: number;
-  radius: number;
-  color: string;
-  velocity: {
-    x: number;
-    y: number;
-  };
-  ttl: number;
-  draw: () => void;
-  update: () => void;
-}
-
 const MouseAnimation: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const mouse = useRef({ x: 0, y: 0 });
+  const animationFrameId = useRef<number | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -29,66 +17,11 @@ const MouseAnimation: React.FC = () => {
 
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
-    const circles: Circle[] = [];
-    const mouse = { x: 0, y: 0 };
-
-    const colors = [
-      '#ff0000', // Red
-  '#00ff00', // Green
-  '#ffa500', // Orange
-  '#ffffff', // White
-  '#ff4500', // Orange-Red
-  '#32cd32', // Lime Green
-  '#ff5b14', // Bright Orange
-  '#edf1f5', // Soft White
-    ];
-
-    class CircleImpl implements Circle {
-      x: number;
-      y: number;
-      radius: number;
-      color: string;
-      velocity: { x: number; y: number };
-      ttl: number;
-
-      constructor(x: number, y: number, radius: number, color: string, velocity: { x: number; y: number }) {
-        this.x = x;
-        this.y = y;
-        this.radius = radius;
-        this.color = color;
-        this.velocity = velocity;
-        this.ttl = 300; // Time to live
-      }
-
-      draw() {
-        if (!ctx) return;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-        ctx.closePath();
-      }
-
-      update() {
-        this.ttl--;
-        this.x += this.velocity.x;
-        this.y += this.velocity.y;
-        this.draw();
-      }
-    }
+    let time = 0;
 
     const handleMouseMove = (event: MouseEvent) => {
-      mouse.x = event.clientX;
-      mouse.y = event.clientY;
-      for (let i = 0; i < 2; i++) {
-        const radius = Math.random() * 4 + 2;
-        const color = colors[Math.floor(Math.random() * colors.length)];
-        const velocity = {
-          x: (Math.random() - 0.5) * 4,
-          y: (Math.random() - 0.5) * 4,
-        };
-        circles.push(new CircleImpl(mouse.x, mouse.y, radius, color, velocity));
-      }
+      mouse.current.x = event.clientX;
+      mouse.current.y = event.clientY;
     };
 
     const handleResize = () => {
@@ -99,17 +32,36 @@ const MouseAnimation: React.FC = () => {
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('resize', handleResize);
 
-    let animationFrameId: number;
     const animate = () => {
-      animationFrameId = requestAnimationFrame(animate);
+      time += 0.02; // Slower pulse
       ctx.clearRect(0, 0, width, height);
-      circles.forEach((circle, index) => {
-        if (circle.ttl <= 0) {
-          circles.splice(index, 1);
-        } else {
-          circle.update();
-        }
-      });
+
+      const radius = 15;
+      const pulse = 0.5 + Math.sin(time) * 0.4; // Pulse from 0.1 to 0.9
+
+      // Create a radial gradient
+      const gradient = ctx.createRadialGradient(
+        mouse.current.x,
+        mouse.current.y,
+        0,
+        mouse.current.x,
+        mouse.current.y,
+        radius
+      );
+
+      // Add color stops
+      gradient.addColorStop(0, `rgba(0, 173, 238, ${pulse})`); // Center color pulses
+      gradient.addColorStop(0.8, 'rgba(0, 173, 238, 0.1)');   // Mid color
+      gradient.addColorStop(1, 'rgba(0, 173, 238, 0)');      // Outer edge is transparent
+
+      ctx.fillStyle = gradient;
+
+      ctx.beginPath();
+      ctx.arc(mouse.current.x, mouse.current.y, radius, 0, Math.PI * 2, false);
+      ctx.fill();
+      ctx.closePath();
+
+      animationFrameId.current = requestAnimationFrame(animate);
     };
 
     animate();
@@ -117,7 +69,9 @@ const MouseAnimation: React.FC = () => {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);
-      cancelAnimationFrame(animationFrameId);
+      if (animationFrameId.current) {
+        cancelAnimationFrame(animationFrameId.current);
+      }
     };
   }, []);
 
