@@ -1,10 +1,11 @@
 'use client';
+
 import { motion } from "framer-motion";
 
 const AboutUs = () => {
   return (
     <section id="about" className="py-20 text-white">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w6-xl mx-auto px-4">
         <div className=" flex-col md:flex-row items-center gap-10">
           <div className="text-center justify-between mx-auto">
             <motion.h2
@@ -12,7 +13,7 @@ const AboutUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-center justify-between text-lg md:text-5xl font-semibold drop-shadow-md md:leading-[4.5rem]"
+              className="text-center justify-between text-lg md:text-4xl font-semibold drop-shadow-md md:leading-[4.5rem]"
             >
               How “TradeToday” AI Forecasts Financial <br /> Market Trends
             </motion.h2>
@@ -79,9 +80,9 @@ const AboutUs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 1.0 }}
-                className="p-4 w-[95%] md:w-[80%] mx-auto"
+                className="p-4 w-[95%] md:w-[80%] mx-auto overflow-x-auto"
               >
-  <table className="w-full border-separate border-spacing-0 text-white text-center text-sm md:text-base border border-white">
+  <table className="w-full border-separate border-spacing-0 text-white text-center text-sm md:text-base border border-white min-w-[600px]">
     <thead className="bg-white text-black">
       <tr>
         <th className="py-8 px-6 border border-white">Features</th>
@@ -113,7 +114,7 @@ const AboutUs = () => {
       <tr>
         <td className="py-8 px-6 border border-white">Market Trend Detection</td>
         <td className="py-8 px-6 border border-white text-green-500 text-2xl">✔</td>
-        <td className="py-8 px-6 border border-white text-red-500 text-2xl">✘</td>
+        <d className="py-8 px-6 border border-white text-red-500 text-2xl">✘</d>
       </tr>
     </tbody>
   </table>
