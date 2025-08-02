@@ -18,7 +18,7 @@ const AboutUs = () => {
               How “TradeToday” AI Forecasts Financial <br /> Market Trends
             </motion.h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-[90%] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 w-full md:w-[90%] mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

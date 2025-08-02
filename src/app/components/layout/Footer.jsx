@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
@@ -33,7 +33,7 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex justify-center space-x-6 mb-8"
+          className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6 mb-8"
         >
           <Link href="#home" className="hover:text-blue-400 transition-colors">Home</Link>
           <Link href="#about" className="hover:text-blue-400 transition-colors">About</Link>

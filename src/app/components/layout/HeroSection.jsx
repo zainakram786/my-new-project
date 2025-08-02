@@ -32,7 +32,7 @@ const HeroSection = () => {
           className="text-4xl md:text-6xl font-bold leading-tight"
         >
           AI-Powered Crypto <br className="hidden md:block" />
-          <span className="text-white">Trading Insights</span>
+          <span className="">Trading Insights</span>
         </motion.h1>
 
         <motion.p

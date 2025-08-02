@@ -52,3 +52,18 @@ body {
   color: var(--foreground);
   font-family: 'Space Mono', monospace;
 }
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  .pricing-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricing-card {
+    width: 90%;
+    max-width: 400px;
+  }
+}

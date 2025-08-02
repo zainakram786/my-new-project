@@ -25,7 +25,7 @@ const Contact = () => {
           Have questions or need support? Reach out to us!
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-8 text-left">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
