@@ -44,7 +44,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex mr-0 items-center gap-1 md:gap-2">
+        <div className="hidden md:flex mr-25 py-7 items-center gap-1 md:gap-2">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
