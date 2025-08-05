@@ -19,9 +19,9 @@ const HeroSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-sm uppercase tracking-widest text-gray-400 font-mono"
+          className="text-sm uppercase text-gray-400 font-mono"
         >
-          #1 Most Trusted AI Platform
+          #1 most trusted pakistan prediction platform
         </motion.p>
 
         <motion.h1
@@ -29,7 +29,7 @@ const HeroSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-4xl md:text-6xl font-bold leading-tight"
+          className="text-4xl md:text-5xl font-bold   leading-tight"
         >
           AI-Powered Crypto <br className="hidden md:block" />
           <span className="">Trading Insights</span>
@@ -67,11 +67,12 @@ const HeroSection = () => {
           transition={{ duration: 0.5, delay: 1.0 }}
           className="flex justify-center gap-4 mt-6"
         >
-          <button className="flex items-center justify-center cursor-pointer gap-2 font-semibold font-mono py-2.5 px-7 rounded-lg transition-all duration-300 hover:bg-white hover:text-[#070F2B] hover:border hover:border-[#2D336B] bg-[#070F2B] text-white border border-[#2D336B] shadow shadow-white">
-            Get 3 Days Free Trial
-          </button>
+          
           <button className="flex items-center justify-center cursor-pointer gap-2 font-semibold font-mono py-2.5 px-7 rounded-lg transition-all duration-300 hover:bg-[#070F2B] hover:text-white shadow shadow-white bg-white text-[#070F2B] border">
             Learn More
+          </button>
+          <button className="flex items-center justify-center cursor-pointer gap-2 font-semibold font-mono py-2.5 px-7 rounded-lg transition-all duration-300 hover:bg-white hover:text-[#070F2B] hover:border hover:border-[#2D336B] bg-[#070F2B] text-white border border-[#2D336B] shadow shadow-white">
+            Get Started
           </button>
           <br />
         

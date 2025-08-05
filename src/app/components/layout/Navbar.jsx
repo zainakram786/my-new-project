@@ -3,6 +3,7 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
+import { FaRocket } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -29,21 +30,21 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`sticky top-0 z-50 flex justify-between items-center transition-all duration-300 ${navbarBg} border-b border-white/30 shadow-lg px-4 md:px-8`}
+        className={`sticky top-0 z-50  flex justify-between items-center transition-all duration-300 ${navbarBg} border-b border-white/30 shadow-lg px-4 md:px-8`}
       >
         <div className="flex items-center">
           <Image
             src="/logo.svg"
             alt="Logo"
             loading="lazy"
-            className="w-40 ml-25 mt-1   md:w-52 2xl:w-72 h-full  "
-            width={200}
-            height={50}
+            className="w-40  ml-25 mt-2 py-0 px-4  mr-[10%]  md:w-52 2xl:w-72 h-full  "
+            width={-200}
+            height={-50}
           />
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-1 md:gap-2">
+        <div className="hidden md:flex mr-0 items-center gap-1 md:gap-2">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -119,14 +120,14 @@ const Navbar = () => {
               href="#"
               className="flex items-center justify-center cursor-pointer gap-2 font-semibold font-mono py-2.5 px-7 rounded-lg transition-all duration-300 hover:bg-[#070F2B] hover:text-white shadow shadow-white bg-white text-[#070F2B] border" style={{ fontFamily: 'monospace' }}
             >
-              Login
+              Join Now
             </Link>
             <Link
               href="#"
               className="flex items-center justify-center cursor-pointer gap-2 font-semibold font-mono py-2.5 px-7 rounded-lg transition-all duration-300 hover:bg-white hover:text-[#070F2B] hover:border hover:border-[#2D336B] bg-[#070F2B] text-white border border-[#2D336B] shadow shadow-white"
               style={{ fontFamily: 'monospace' }}
             >
-              Free 3 days trial
+              Free 3 days trial <FaRocket />
             </Link>
           </motion.div>
         </div>
