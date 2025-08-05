@@ -2,10 +2,10 @@
 
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -36,9 +36,9 @@ const Navbar = () => {
             src="/logo.svg"
             alt="Logo"
             loading="lazy"
-            className="w-40 md:w-52 2xl:w-72 h-full"
-            width={150}
-            height={150}
+            className="w-40 ml-25 mt-1   md:w-52 2xl:w-72 h-full  "
+            width={200}
+            height={50}
           />
         </div>
 

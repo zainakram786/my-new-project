@@ -66,9 +66,11 @@ const Pricing = () => {
         </div>
        
       </section>
-      
-      <div className="text-white rounded-2xl py-18 w-full max-w-[1440px] mx-auto m-25 px-4 display-flex  " >
-          <div className="flex flex-col md:flex-row w-full items-center py-10 md:py-10 px-4 gap-5">
+
+      <div className="relative text-white rounded-2xl py-10  w-full max-w-6xl mx-auto m-1 px-4 display-flex" style={{backgroundImage: "url('/bgCrypto.svg')", backgroundSize: 'cover', backgroundPosition: 'center'}}>
+
+          <div className="flex flex-col md:flex-row w-full items-center py-1 md:py-10 px-4 gap-5">
+            
               <div className="text-white p-2 md:p-10 rounded-lg w-full md:w-1/3 space-y-8 flex-1">
                 <p className="text-xl font-semibold tracking-wide">Crypto Prediction</p>
                 <h2 className="text-3xl md:text-4xl font-bold leading-tight">Low fees and deep liquidity</h2>
@@ -79,7 +81,7 @@ const Pricing = () => {
                   Learn More
                 </button>
               </div>
-              <div className="p-4 ">
+              <div className=" ">
                 <img src="/dollarcoin.png" alt="Low Fees" className=" mx-auto md:mx-0 mb-2" />
               </div>
               
